@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B5-1 生成式AI融入教學工作坊</title>
+  <title>B5-1 生成式 AI 融入教育的應用｜許凱琳老師</title>
+  <meta name="description" content="B5-1 生成式 AI 研習簡報：從理解生成式 AI、AI Agent，到教學應用、官方教育資源與 AI 素養。">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -141,6 +142,116 @@
     .btn-primary:hover {
       transform: translateY(-2px);
       box-shadow: 0 8px 30px rgba(0,194,224,0.5);
+    }
+
+    .cover-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: clamp(38px, 5vw, 82px);
+      align-items: center;
+      width: min(1480px, 100%);
+      text-align: left;
+    }
+
+    .cover-content {
+      width: min(860px, 100%);
+    }
+
+    .cover-title {
+      font-size: clamp(54px, 4.5vw, 76px);
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -0.035em;
+      margin-bottom: 18px;
+      text-shadow: 0 0 40px rgba(0,194,224,0.4);
+    }
+
+    .cover-goals {
+      width: min(800px, 100%);
+      margin-top: 26px;
+      padding: 20px 22px;
+      border: 1px solid rgba(126,237,255,.22);
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(8,25,70,.72), rgba(41,26,101,.58));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 16px 40px rgba(0,0,0,.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .cover-goals-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--cyan-light);
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .cover-goals-title::before {
+      content: '';
+      width: 28px;
+      height: 3px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple-light));
+      box-shadow: 0 0 14px rgba(0,194,224,.5);
+    }
+
+    .cover-goals-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px 14px;
+      list-style: none;
+    }
+
+    .cover-goals-list li {
+      position: relative;
+      padding: 11px 14px 11px 38px;
+      border-radius: 13px;
+      background: rgba(255,255,255,.055);
+      color: var(--white-90);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .cover-goals-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 14px;
+      top: 10px;
+      color: var(--cyan-light);
+      font-weight: 900;
+    }
+
+    .cover-qr-card {
+      width: min(360px, 100%);
+      justify-self: end;
+      padding: 26px;
+      border: 1px solid rgba(126,237,255,.38);
+      border-radius: 24px;
+      background: rgba(8,18,57,.82);
+      box-shadow: 0 22px 65px rgba(0,0,0,.35), 0 0 34px rgba(0,194,224,.16);
+      text-align: center;
+      backdrop-filter: blur(12px);
+    }
+
+    .cover-qr-card img {
+      display: block;
+      width: min(220px, 100%);
+      margin: 14px auto;
+      padding: 8px;
+      border-radius: 14px;
+      background: white;
+    }
+
+    .cover-speaker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 26px;
     }
 
     .btn-outline {
@@ -289,6 +400,450 @@
     .nav-btn:hover { background: var(--white-30); }
     .nav-btn.left { left: calc(50% - 50px); }
     .nav-btn.right { left: calc(50% + 14px); }
+
+    .slide-menu {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      z-index: 250;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 9px 7px 13px;
+      border-radius: 999px;
+      background: rgba(5,12,42,.82);
+      border: 1px solid rgba(126,237,255,.35);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 8px 26px rgba(0,0,0,.22);
+      color: var(--white-70);
+      font-size: 12px;
+    }
+
+    .slide-menu select {
+      width: min(310px, 36vw);
+      border: 0;
+      outline: 0;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+      color: white;
+      padding: 8px 34px 8px 12px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .slide-menu option { color: #0A0E27; background: white; }
+
+    .evolution-layout {
+      display: grid;
+      grid-template-columns: minmax(360px, .82fr) minmax(0, 1.38fr);
+      gap: 34px;
+      align-items: center;
+      width: min(1560px, 100%);
+      margin: auto;
+    }
+
+    .evolution-image-panel img {
+      display: block;
+      width: 100%;
+      max-height: 74vh;
+      object-fit: contain;
+      background: white;
+      border-radius: 20px;
+      border: 1px solid rgba(126,237,255,.28);
+      box-shadow: 0 22px 65px rgba(0,0,0,.38), 0 0 38px rgba(0,194,224,.13);
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, var(--cyan-light), #b89cff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .journey {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .journey-card {
+      min-height: 172px;
+      padding: 22px 16px;
+      text-align: center;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(126,237,255,.24);
+      border-radius: 18px;
+      position: relative;
+    }
+
+    .journey-card:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -18px;
+      top: 68px;
+      color: var(--cyan);
+      z-index: 2;
+      font-weight: 900;
+    }
+
+    .journey-card .num {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--purple));
+      font-weight: 900;
+    }
+
+    .journey-card h3 { color: var(--cyan-light); font-size: 18px; margin-bottom: 8px; }
+    .journey-card p { color: var(--white-70); font-size: 13px; line-height: 1.65; }
+
+    .agent-flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin: 26px 0;
+      align-items: stretch;
+    }
+
+    .agent-step {
+      padding: 18px 12px;
+      text-align: center;
+      border-radius: 14px;
+      background: rgba(108,63,197,.18);
+      border: 1px solid rgba(166,127,219,.4);
+      position: relative;
+    }
+
+    .agent-step:not(:last-child)::after {
+      content: '›';
+      position: absolute;
+      right: -10px;
+      top: 32%;
+      color: var(--cyan-light);
+      font-size: 28px;
+      z-index: 2;
+    }
+
+    .agent-step strong { display: block; color: var(--cyan-light); margin-bottom: 5px; }
+    .agent-step span { color: var(--white-70); font-size: 12px; line-height: 1.5; }
+
+    .source-note {
+      font-size: 11px;
+      color: var(--white-30);
+      line-height: 1.5;
+    }
+
+    .current-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      background: rgba(108,63,197,.26);
+      border: 1px solid rgba(184,156,255,.7);
+      color: #e0d6ff;
+      font-weight: 900;
+      box-shadow: 0 0 28px rgba(108,63,197,.3);
+    }
+
+    .prompt-box {
+      border-left: 4px solid var(--cyan);
+      padding: 18px 22px;
+      background: rgba(0,194,224,.09);
+      border-radius: 0 14px 14px 0;
+      color: var(--white-90);
+      line-height: 1.75;
+    }
+
+    .resource-actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:24px; }
+
+    .full-image {
+      max-width: 100%;
+      max-height: 68vh;
+      object-fit: contain;
+      border-radius: 16px;
+      border: 1px solid rgba(126,237,255,.25);
+      box-shadow: 0 20px 60px rgba(0,0,0,.35);
+      background: white;
+    }
+
+    .teaching-image-slide {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 64px 54px;
+    }
+
+    .teaching-image-slide img {
+      display: block;
+      width: min(1650px, 100%);
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 20px;
+      border: 1px solid rgba(126,237,255,.22);
+      background: #f8f1df;
+      box-shadow: 0 24px 70px rgba(0,0,0,.38), 0 0 34px rgba(0,194,224,.12);
+    }
+
+    .teaching-image-caption {
+      margin-top: 12px;
+      color: var(--white-90);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .prompt-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 28px;
+      background: rgba(2, 6, 24, .84);
+      backdrop-filter: blur(12px);
+    }
+
+    .prompt-modal.open { display: flex; }
+
+    .prompt-library {
+      width: min(1120px, 96vw);
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(126, 237, 255, .28);
+      border-radius: 24px;
+      background: linear-gradient(150deg, #081535, #101447 65%, #241052);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, .55);
+    }
+
+    .prompt-library-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      padding: 24px 28px 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .prompt-library-head h2 { font-size: 30px; margin-bottom: 6px; }
+    .prompt-library-head p { color: var(--white-70); font-size: 14px; }
+
+    .prompt-back {
+      margin-top: 12px;
+      padding: 8px 14px;
+      border: 1px solid rgba(126,237,255,.35);
+      border-radius: 999px;
+      background: rgba(0,194,224,.1);
+      color: var(--cyan-light);
+      font: 700 13px "Noto Sans TC", sans-serif;
+      cursor: pointer;
+    }
+
+    .prompt-back[hidden] { display: none; }
+
+    .prompt-close {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.25);
+      background: rgba(255,255,255,.08);
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    .prompt-filters {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      padding: 14px 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .prompt-filter {
+      border: 1px solid rgba(126,237,255,.28);
+      border-radius: 999px;
+      padding: 7px 14px;
+      color: var(--white-70);
+      background: rgba(255,255,255,.05);
+      cursor: pointer;
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .prompt-filter.active,
+    .prompt-filter:hover {
+      color: #06102d;
+      background: var(--cyan-light);
+      border-color: var(--cyan-light);
+    }
+
+    .prompt-list {
+      min-height: 0;
+      overflow-y: scroll;
+      scrollbar-gutter: stable;
+      padding: 18px 28px 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+    }
+
+    .prompt-list::-webkit-scrollbar,
+    .prompt-card textarea::-webkit-scrollbar { width: 12px; }
+    .prompt-list::-webkit-scrollbar-track,
+    .prompt-card textarea::-webkit-scrollbar-track { background: rgba(255,255,255,.06); border-radius: 999px; }
+    .prompt-list::-webkit-scrollbar-thumb,
+    .prompt-card textarea::-webkit-scrollbar-thumb { background: linear-gradient(var(--cyan),var(--purple-light)); border-radius: 999px; border: 3px solid #111546; }
+
+    .prompt-card {
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      background: rgba(255,255,255,.055);
+      overflow: hidden;
+    }
+
+    .prompt-card[hidden] { display: none; }
+    .prompt-card summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 17px;
+      cursor: pointer;
+      list-style: none;
+      color: var(--cyan-light);
+      font-weight: 800;
+    }
+    .prompt-card summary::-webkit-details-marker { display: none; }
+    .prompt-card summary::after {
+      content: '查看';
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: var(--white-70);
+      background: rgba(255,255,255,.07);
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .prompt-card summary:hover { background: rgba(126,237,255,.08); }
+    .prompt-card-body { padding: 0 15px 15px; }
+    .prompt-card textarea {
+      width: 100%;
+      min-height: 210px;
+      resize: vertical;
+      border: 1px solid rgba(126,237,255,.2);
+      border-radius: 12px;
+      padding: 13px;
+      background: rgba(2,8,30,.72);
+      color: var(--white-90);
+      font: 14px/1.65 "Noto Sans TC", sans-serif;
+    }
+    .copy-prompt {
+      width: 100%;
+      margin-top: 9px;
+      padding: 9px 12px;
+      border: 0;
+      border-radius: 10px;
+      background: linear-gradient(135deg,var(--cyan),#4a7eff);
+      color: white;
+      font: 700 14px "Noto Sans TC", sans-serif;
+      cursor: pointer;
+    }
+
+    .prompt-library.detail-mode .prompt-filters { display: none; }
+    .prompt-list.detail-mode { display: block; padding-top: 22px; }
+    .prompt-list.detail-mode .prompt-card:not(.selected) { display: none !important; }
+    .prompt-list.detail-mode .prompt-card.selected {
+      width: min(900px, 100%);
+      margin: 0 auto;
+      border-color: rgba(126,237,255,.35);
+      background: rgba(255,255,255,.075);
+      box-shadow: 0 16px 45px rgba(0,0,0,.25);
+    }
+    .prompt-list.detail-mode .prompt-card.selected summary {
+      padding: 20px 22px;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      font-size: 22px;
+      cursor: default;
+      pointer-events: none;
+    }
+    .prompt-list.detail-mode .prompt-card.selected summary::after { display: none; }
+    .prompt-list.detail-mode .prompt-card-body { padding: 18px 20px 20px; }
+    .prompt-list.detail-mode .prompt-card textarea {
+      min-height: 46vh;
+      max-height: 50vh;
+      resize: none;
+      overflow-y: scroll;
+      scrollbar-gutter: stable;
+      padding: 18px 20px;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+    .prompt-list.detail-mode .copy-prompt {
+      position: sticky;
+      bottom: 0;
+      padding: 12px 16px;
+      font-size: 16px;
+    }
+
+    @media (max-width: 780px) {
+      body { overflow: auto; }
+      .slides-wrapper { min-height: 100svh; }
+      .slide { padding: 72px 22px 72px; overflow-y: auto; align-items: flex-start !important; }
+      .slide > div { max-width: 100% !important; }
+      .slide h1 { font-size: 38px !important; }
+      .slide h2 { font-size: 30px !important; }
+      .slide p, .slide li { line-height: 1.55; }
+      .journey, .agent-flow, .tool-grid { grid-template-columns: 1fr !important; }
+      .journey-card { min-height: auto; }
+      .journey-card::after, .agent-step::after { display:none; }
+      .slide [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .slide [style*="width:200px"] { width:130px !important; height:130px !important; }
+      .nav-hint { display:none; }
+      .full-image { max-height: 52vh; }
+      .teaching-image-slide { padding:72px 16px 72px; justify-content:center; }
+      .teaching-image-slide img { max-height:64vh; border-radius:14px; }
+      .teaching-image-caption { font-size:16px; }
+      .slide-menu { top:10px; right:10px; left:10px; justify-content:space-between; }
+      .slide-menu span { display:none; }
+      .slide-menu select { width:100%; }
+      .cover-layout { grid-template-columns:1fr; gap:22px; text-align:center; }
+      .cover-content { width:100%; }
+      .cover-title { font-size:42px; }
+      .cover-goals { margin-top:20px; padding:16px; text-align:left; }
+      .cover-goals-list { grid-template-columns:1fr; gap:8px; }
+      .cover-goals-list li { font-size:15px; padding-top:9px; padding-bottom:9px; }
+      .cover-qr-card { width:min(290px,100%); justify-self:center; padding:18px; }
+      .cover-qr-card img { width:170px; margin:10px auto; }
+      .cover-speaker { justify-content:center; margin-top:20px; }
+      .evolution-layout { grid-template-columns:1fr; gap:22px; }
+      .evolution-image-panel img { max-height:50vh; }
+      .prompt-modal { padding: 8px; }
+      .prompt-library { width:100%; max-height:96vh; border-radius:16px; }
+      .prompt-library-head { padding:18px 18px 14px; }
+      .prompt-library-head h2 { font-size:24px; }
+      .prompt-filters { padding:12px 18px; }
+      .prompt-list { grid-template-columns:1fr; padding:14px 18px 22px; }
+      .prompt-list.detail-mode .prompt-card.selected summary { font-size:18px; padding:16px; }
+      .prompt-list.detail-mode .prompt-card-body { padding:14px; }
+      .prompt-list.detail-mode .prompt-card textarea { min-height:48vh; max-height:52vh; font-size:15px; padding:14px; }
+    }
+
+    @media (min-width: 781px) and (max-width: 1180px) {
+      .cover-layout { grid-template-columns:minmax(0,1fr) 320px; gap:32px; }
+      .cover-title { font-size:54px; }
+      .cover-goals { padding:18px; }
+      .cover-goals-list li { font-size:14px; padding-left:34px; }
+      .cover-qr-card { width:320px; padding:20px; }
+      .cover-qr-card img { width:190px; }
+    }
   </style>
 </head>
 <body>
@@ -296,29 +851,48 @@
 <div class="slides-wrapper" id="slidesWrapper">
 
   <!-- ===== SLIDE 1: COVER ===== -->
-  <div class="slide" style="background: linear-gradient(135deg, #0A0E27 0%, #0D1B4B 40%, #1A1060 70%, #2A0E5C 100%); flex-direction: column; text-align: center; overflow: hidden;">
+  <div class="slide" style="background: linear-gradient(135deg, #0A0E27 0%, #0D1B4B 40%, #1A1060 70%, #2A0E5C 100%); overflow: hidden;">
     <img src="cover_20260514_204154.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.25;mix-blend-mode:screen;">
     <div class="deco-circle" style="width:500px;height:500px;top:-150px;right:-150px;background:radial-gradient(circle,rgba(108,63,197,0.3),transparent 70%);"></div>
     <div class="deco-circle" style="width:300px;height:300px;bottom:-80px;left:-80px;background:radial-gradient(circle,rgba(0,194,224,0.25),transparent 70%);"></div>
-    <div style="position:relative;z-index:1;">
-      <div class="tag" style="margin-bottom:24px;font-size:13px;padding:6px 18px;">教育部 B5-1 生成式AI工作坊</div>
-      <h1 style="font-size:54px;font-weight:900;line-height:1.2;margin-bottom:16px;text-shadow:0 0 40px rgba(0,194,224,0.4);">生成式AI<br><span style="color:var(--cyan-light);">融入教學工作坊</span></h1>
-      <div class="deco-line" style="margin:20px auto;"></div>
-      <p style="font-size:18px;color:var(--white-70);">AI 不是取代老師，而是協助老師提升效率</p>
-      <div style="margin-top:36px;display:flex;align-items:center;justify-content:center;gap:16px;">
-        <div style="width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid var(--cyan);box-shadow:0 0 20px rgba(0,194,224,0.4);">
-          <img src="teacher.png" style="width:100%;height:100%;object-fit:cover;" alt="講師">
+    <div class="cover-layout">
+      <div class="cover-content">
+        <div class="tag" style="margin-bottom:24px;font-size:13px;padding:6px 18px;">教育部 B5-1 生成式 AI 工作坊・2026 更新版</div>
+        <h1 class="cover-title">生成式 AI<br><span style="color:var(--cyan-light);">融入教育的應用</span></h1>
+        <div class="deco-line" style="margin:20px 0;"></div>
+        <div class="cover-goals" aria-label="本次研習目標">
+          <p class="cover-goals-title">本次研習目標</p>
+          <ul class="cover-goals-list">
+            <li>掌握 AI 發展趨勢</li>
+            <li>理解 AI 的教育應用</li>
+            <li>體驗生成式 AI 教學實作</li>
+            <li>建立 AI 素養與倫理觀念</li>
+          </ul>
         </div>
-        <div style="text-align:left;">
-          <p style="font-weight:700;font-size:18px;">許凱琳 老師</p>
-          <p style="font-size:13px;color:var(--white-70);">新北市大豐國小 自然教師</p>
+        <div class="cover-speaker">
+          <div style="width:52px;height:52px;border-radius:50%;overflow:hidden;border:2px solid var(--cyan);box-shadow:0 0 20px rgba(0,194,224,0.4);">
+            <img src="teacher.png" style="width:100%;height:100%;object-fit:cover;" alt="講師">
+          </div>
+          <div style="text-align:left;">
+            <p style="font-weight:700;font-size:18px;">許凱琳 老師</p>
+            <p style="font-size:13px;color:var(--white-70);">新北市大豐國小 自然教師</p>
+          </div>
         </div>
       </div>
+      <aside class="cover-qr-card" aria-label="課前問卷 QR Code">
+        <div class="tag" style="margin-bottom:4px;background:rgba(255,190,65,.13);border-color:rgba(255,190,65,.4);color:#FFD27A;">BEFORE WE START</div>
+        <h2 style="font-size:25px;font-weight:900;margin-top:10px;">課前先做問卷</h2>
+        <p style="font-size:14px;color:var(--white-70);margin-top:5px;">請掃描 QR Code，讓講師更了解你的需求。</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjmH45upbUWIBbxP31OtPGiA9RmSgMuAjS0XHfir8mY1bRKw/viewform?usp=dialog" target="_blank" rel="noopener" aria-label="開啟 B5-1 課前問卷">
+          <img src="pre-workshop-survey-qr.png" alt="B5-1 課前問卷 QR Code">
+        </a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjmH45upbUWIBbxP31OtPGiA9RmSgMuAjS0XHfir8mY1bRKw/viewform?usp=dialog" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;padding:11px 18px;font-size:14px;">直接開啟課前問卷</a>
+      </aside>
     </div>
   </div>
 
   <!-- ===== SLIDE 2: INSTRUCTOR ===== -->
-  <div class="slide" style="background: linear-gradient(135deg, #050C2A 0%, #0D1B4B 100%);">
+  <div class="slide" data-slide-title="自我介紹" style="background: linear-gradient(135deg, #050C2A 0%, #0D1B4B 100%);">
     <img src="slide-instructor_20260514_210723.png" style="position:absolute;right:0;top:0;height:100%;width:35%;object-fit:cover;opacity:0.12;mask-image:linear-gradient(to left,rgba(0,0,0,0.5),transparent);">
     <div class="deco-circle" style="width:400px;height:400px;top:-100px;right:-100px;background:radial-gradient(circle,rgba(0,194,224,0.15),transparent 70%);"></div>
     <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:center;width:100%;max-width:1000px;position:relative;z-index:1;">
@@ -347,31 +921,22 @@
     </div>
   </div>
 
-  <!-- ===== SLIDE 3: GOALS ===== -->
-  <div class="slide" style="background: linear-gradient(160deg, #050C2A, #0D1B4B 60%, #1A1060); flex-direction:column; align-items:flex-start; justify-content:center;">
-    <img src="slide-goals_20260514_210728.png" style="position:absolute;right:0;top:0;width:45%;height:100%;object-fit:cover;opacity:0.13;mask-image:linear-gradient(to left,rgba(0,0,0,0.5),transparent);">
-    <div style="width:100%;max-width:900px;position:relative;z-index:1;">
-      <div class="tag" style="margin-bottom:16px;">WORKSHOP GOALS</div>
-      <h2 style="font-size:42px;font-weight:900;color:var(--white);margin-bottom:6px;">本次研習目標</h2>
-      <div class="deco-line"></div>
-      <ul class="step-list" style="margin-top:28px;">
-        <li>
-          <div class="step-num">🎯</div>
-          <p style="font-size:20px;line-height:1.6;padding-top:3px;">了解生成式AI的<strong style="color:var(--cyan-light);">發展歷程</strong>與技術原理</p>
-        </li>
-        <li>
-          <div class="step-num">🔧</div>
-          <p style="font-size:20px;line-height:1.6;padding-top:3px;">認識常見AI工具，學會<strong style="color:var(--cyan-light);">選擇適合的AI</strong></p>
-        </li>
-        <li>
-          <div class="step-num">💻</div>
-          <p style="font-size:20px;line-height:1.6;padding-top:3px;">親手體驗AI工具，<strong style="color:var(--cyan-light);">融入教學設計</strong>與課程規劃</p>
-        </li>
-        <li>
-          <div class="step-num">⚖️</div>
-          <p style="font-size:20px;line-height:1.6;padding-top:3px;">培養<strong style="color:var(--cyan-light);">教師AI素養</strong>，掌握AI倫理與正確使用原則</p>
-        </li>
-      </ul>
+  <!-- ===== SLIDE 4: PADLET HUB ===== -->
+  <div class="slide" style="background:linear-gradient(145deg,#050C2A,#10345A 55%,#241151);flex-direction:column;align-items:flex-start;">
+    <div style="width:100%;max-width:1020px;">
+      <div class="tag" style="margin-bottom:14px;">LEARNER RESOURCE HUB</div>
+      <h2 style="font-size:42px;font-weight:900;">學員資源入口</h2>
+      <p style="font-size:17px;color:var(--white-70);margin-top:9px;">先開啟 Padlet 收藏研習資源；實作時可直接打開網頁內的提示詞操作中心，一鍵複製使用。</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:25px;">
+        <div class="glass-card"><div style="font-size:28px;">📌</div><h3 style="color:var(--cyan-light);margin:8px 0;">Padlet 資源牆</h3><p style="font-size:13px;color:var(--white-70);line-height:1.65;">簡報、示範素材與延伸學習資源。</p></div>
+        <div class="glass-card"><div style="font-size:28px;">📋</div><h3 style="color:var(--cyan-light);margin:8px 0;">網頁提示詞</h3><p style="font-size:13px;color:var(--white-70);line-height:1.65;">依教師端、創作與學生端分類，可直接複製。</p></div>
+        <div class="glass-card"><div style="font-size:28px;">📝</div><h3 style="color:var(--cyan-light);margin:8px 0;">完整操作筆記</h3><p style="font-size:13px;color:var(--white-70);line-height:1.65;">保留原始 Google 文件，方便課後查閱。</p></div>
+      </div>
+      <div class="resource-actions">
+        <a href="https://padlet.com/ab0308/b5-1-ai-0818-6j71t2ysovddfbpa" target="_blank" rel="noopener" class="btn-primary">開啟 B5-1 學員 Padlet</a>
+        <button type="button" class="btn-primary" onclick="openPromptLibrary()">開啟提示詞操作中心</button>
+        <a href="https://docs.google.com/document/d/15XWItKCS6yQj-_xm4-BbChhSjKjWw_vIpLMpErcrZR0/edit?tab=t.0" target="_blank" rel="noopener" class="btn-outline">查看完整操作筆記</a>
+      </div>
     </div>
   </div>
 
@@ -408,79 +973,38 @@
   </div>
 
   <!-- ===== SLIDE 6: AI EVOLUTION ===== -->
-  <div class="slide" style="background: linear-gradient(160deg, #0A0E27, #0D1B4B); flex-direction:column; align-items:flex-start; padding: 40px 80px;">
-    <img src="timeline_20260514_204202.png" style="position:absolute;right:0;top:0;height:100%;width:45%;object-fit:cover;opacity:0.15;mask-image:linear-gradient(to left,rgba(0,0,0,0.6),transparent);">
-    <img src="slide5-custom.png" style="position:absolute;right:40px;top:50%;transform:translateY(-50%);max-width:40%;max-height:80%;object-fit:contain;border-radius:16px;box-shadow:0 0 40px rgba(0,194,224,0.3);border:1px solid rgba(0,194,224,0.2);">
-
-    <div style="width:100%;max-width:960px;">
-      <div class="tag" style="margin-bottom:14px;">AI EVOLUTION</div>
-      <h2 style="font-size:36px;font-weight:900;margin-bottom:6px;">AI 發展演進歷程</h2>
-      <div class="deco-line" style="margin-bottom:20px;"></div>
-      <div style="display:flex;flex-direction:column;gap:0;">
-        <!-- item 1 -->
-        <div style="display:flex;align-items:flex-start;gap:20px;padding-bottom:0;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0;padding-top:6px;">
-            <div class="timeline-dot"></div>
-            <div style="width:2px;height:48px;background:linear-gradient(to bottom,var(--cyan),transparent);"></div>
+  <div class="slide" style="background:linear-gradient(160deg,#0A0E27,#0D1B4B);padding:34px 50px 48px;">
+    <div class="evolution-layout">
+      <div>
+        <div class="tag" style="margin-bottom:12px;">AI EVOLUTION</div>
+        <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">AI 發展演進歷程</h2>
+        <div class="deco-line" style="margin-bottom:18px;"></div>
+        <div style="display:flex;flex-direction:column;gap:0;">
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;"><div class="timeline-dot"></div><div style="width:2px;height:44px;background:linear-gradient(to bottom,var(--cyan),transparent);"></div></div>
+            <div style="padding-bottom:10px;"><span style="color:var(--cyan);font-size:13px;font-weight:700;">1950 年代</span><h3 style="font-size:18px;font-weight:700;">人工智慧 AI</h3><p style="font-size:13px;color:var(--white-70);">讓機器模仿人類思考，開啟 AI 研究時代</p></div>
           </div>
-          <div style="padding-bottom:12px;">
-            <span style="color:var(--cyan);font-size:13px;font-weight:700;">1950年代</span>
-            <h3 style="font-size:17px;font-weight:700;color:var(--white);">🤖 人工智慧 AI</h3>
-            <p style="font-size:13px;color:var(--white-70);">讓機器模仿人類思考，開啟AI研究時代</p>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;"><div class="timeline-dot"></div><div style="width:2px;height:44px;background:linear-gradient(to bottom,var(--cyan),transparent);"></div></div>
+            <div style="padding-bottom:10px;"><span style="color:var(--cyan);font-size:13px;font-weight:700;">機器學習時代</span><h3 style="font-size:18px;font-weight:700;">Machine Learning</h3><p style="font-size:13px;color:var(--white-70);">從大量資料學習，發展推薦與預測演算法</p></div>
           </div>
-        </div>
-        <!-- item 2 -->
-        <div style="display:flex;align-items:flex-start;gap:20px;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0;padding-top:6px;">
-            <div class="timeline-dot"></div>
-            <div style="width:2px;height:48px;background:linear-gradient(to bottom,var(--cyan),transparent);"></div>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;"><div class="timeline-dot"></div><div style="width:2px;height:44px;background:linear-gradient(to bottom,var(--cyan),transparent);"></div></div>
+            <div style="padding-bottom:10px;"><span style="color:var(--cyan);font-size:13px;font-weight:700;">深度學習突破</span><h3 style="font-size:18px;font-weight:700;">Deep Learning</h3><p style="font-size:13px;color:var(--white-70);">多層神經網路：語音辨識、即時翻譯、AlphaGo</p></div>
           </div>
-          <div style="padding-bottom:12px;">
-            <span style="color:var(--cyan);font-size:13px;font-weight:700;">機器學習時代</span>
-            <h3 style="font-size:17px;font-weight:700;color:var(--white);">📊 Machine Learning</h3>
-            <p style="font-size:13px;color:var(--white-70);">從大量資料學習・推薦演算法 → YouTube推薦、社群媒體、同溫層現象</p>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div style="display:flex;flex-direction:column;align-items:center;padding-top:6px;"><div class="timeline-dot"></div><div style="width:2px;height:44px;background:linear-gradient(to bottom,var(--cyan),transparent);"></div></div>
+            <div style="padding-bottom:10px;"><span style="color:var(--cyan);font-size:13px;font-weight:700;">生成式 AI 誕生</span><h3 style="font-size:18px;font-weight:700;">Generative AI</h3><p style="font-size:13px;color:var(--white-70);">AI 能創造文字、圖片、音樂、簡報與程式碼</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:16px;">
+            <div style="padding-top:6px;"><div style="width:14px;height:14px;background:linear-gradient(135deg,var(--cyan),var(--purple-light));border-radius:50%;box-shadow:0 0 16px var(--purple-light);"></div></div>
+            <div><span style="color:var(--purple-light);font-size:13px;font-weight:700;">2022 — 現在</span><h3 style="font-size:18px;font-weight:700;">ChatGPT 問世</h3><p style="font-size:13px;color:var(--white-70);">生成式 AI 快速普及，正式進入日常生活</p></div>
           </div>
         </div>
-        <!-- item 3 -->
-        <div style="display:flex;align-items:flex-start;gap:20px;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0;padding-top:6px;">
-            <div class="timeline-dot"></div>
-            <div style="width:2px;height:48px;background:linear-gradient(to bottom,var(--cyan),transparent);"></div>
-          </div>
-          <div style="padding-bottom:12px;">
-            <span style="color:var(--cyan);font-size:13px;font-weight:700;">深度學習突破</span>
-            <h3 style="font-size:17px;font-weight:700;color:var(--white);">🧠 Deep Learning</h3>
-            <p style="font-size:13px;color:var(--white-70);">多層神經網路・例：Siri、語音辨識、即時翻譯、AlphaGo</p>
-          </div>
-        </div>
-        <!-- item 4 -->
-        <div style="display:flex;align-items:flex-start;gap:20px;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0;padding-top:6px;">
-            <div class="timeline-dot"></div>
-            <div style="width:2px;height:48px;background:linear-gradient(to bottom,var(--cyan),transparent);"></div>
-          </div>
-          <div style="padding-bottom:12px;">
-            <span style="color:var(--cyan);font-size:13px;font-weight:700;">生成式AI誕生</span>
-            <h3 style="font-size:17px;font-weight:700;color:var(--white);">✨ Generative AI</h3>
-            <p style="font-size:13px;color:var(--white-70);">AI能創造內容：文字・圖片・音樂・簡報・程式碼</p>
-          </div>
-        </div>
-        <!-- item 5 -->
-        <div style="display:flex;align-items:flex-start;gap:20px;">
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0;padding-top:6px;">
-            <div style="width:14px;height:14px;background:linear-gradient(135deg,var(--cyan),var(--purple-light));border-radius:50%;box-shadow:0 0 16px var(--purple-light);flex-shrink:0;"></div>
-          </div>
-          <div>
-            <span style="color:var(--purple-light);font-size:13px;font-weight:700;">2022 — 現在</span>
-            <h3 style="font-size:17px;font-weight:700;color:var(--white);">🚀 ChatGPT 問世</h3>
-            <p style="font-size:13px;color:var(--white-70);">生成式AI快速普及，AI正式進入日常生活！</p>
-          </div>
-        </div>
+        <div style="margin-top:18px;"><a href="https://www.youtube.com/watch?v=wE3oTZLijsI&t=5s" target="_blank" rel="noopener" class="btn-outline">觀看影片：什麼是語言模型？</a></div>
       </div>
-      <div style="margin-top:14px;">
-        <a href="https://www.youtube.com/watch?v=wE3oTZLijsI&t=5s" target="_blank" class="btn-outline">
-          ▶ 觀看影片：什麼是語言模型？
-        </a>
+      <div class="evolution-image-panel">
+        <img src="slide5-custom.png" alt="從人工智慧、機器學習、深度學習到生成式 AI 的完整演進圖">
       </div>
     </div>
   </div>
@@ -595,25 +1119,123 @@
     </div>
   </div>
 
+  <!-- ===== GENERATIVE AI EXPLAINER ===== -->
+  <div class="slide teaching-image-slide" data-slide-title="什麼是生成式 AI" style="background:linear-gradient(150deg,#050C2A,#0D1B4B 58%,#1A1060);">
+    <img src="9.jpg" alt="生成式 AI 的編碼器、解碼器、Transformer 架構、訓練方式與文字接龍生成原理">
+    <p class="teaching-image-caption">什麼是生成式 AI：從 Transformer 到文字接龍生成</p>
+  </div>
+
+  <!-- ===== HALLUCINATION ORIGIN ===== -->
+  <div class="slide teaching-image-slide" data-slide-title="幻覺怎麼來的" style="background:linear-gradient(150deg,#050C2A,#25134F 62%,#3A173E);">
+    <img src="10.jpg" alt="AI 幻覺的成因，包括訓練資料限制、模型生成機制，以及缺乏事實查核能力">
+    <p class="teaching-image-caption">AI 幻覺怎麼來的：資料限制、機率生成與缺乏事實查核</p>
+  </div>
+
+  <!-- ===== HALLUCINATION ===== -->
+  <div class="slide" style="background:linear-gradient(160deg,#050C2A,#25134F);flex-direction:column;align-items:flex-start;">
+    <div style="width:100%;max-width:960px;">
+      <div class="tag" style="margin-bottom:14px;background:rgba(255,160,0,.12);color:#FFD080;border-color:rgba(255,160,0,.35);">AI 幻覺</div>
+      <h2 style="font-size:42px;font-weight:900;">講得很像真的，不代表一定是真的</h2>
+      <div class="deco-line"></div>
+      <div style="display:grid;grid-template-columns:1.15fr .85fr;gap:24px;margin-top:26px;align-items:stretch;">
+        <div class="glass-card" style="padding:30px;">
+          <p style="font-size:20px;line-height:1.8;">生成式 AI 不是從資料庫取出「標準答案」，而是根據模型學到的模式，<strong style="color:var(--cyan-light);">預測下一段最可能出現的內容</strong>。</p>
+          <p style="font-size:16px;color:var(--white-70);line-height:1.8;margin-top:16px;">因此，它可能編造不存在的資料、來源、人物或事件；流暢與自信不是正確性的保證。</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="warn-card" style="background:rgba(255,160,0,.1);border:1px solid rgba(255,160,0,.32);margin:0;"><span style="font-size:30px;">🔎</span><div><h3 style="color:#FFD080;">先查證</h3><p style="font-size:14px;color:var(--white-70);margin-top:5px;">確認原始來源、日期與上下文。</p></div></div>
+          <div class="warn-card" style="background:rgba(0,194,224,.1);border:1px solid rgba(0,194,224,.3);margin:0;"><span style="font-size:30px;">🧭</span><div><h3 style="color:var(--cyan-light);">再判斷</h3><p style="font-size:14px;color:var(--white-70);margin-top:5px;">教師保有專業決策與最終責任。</p></div></div>
+          <div class="warn-card" style="background:rgba(108,63,197,.16);border:1px solid rgba(166,127,219,.35);margin:0;"><span style="font-size:30px;">📚</span><div><h3 style="color:var(--purple-light);">有依據</h3><p style="font-size:14px;color:var(--white-70);margin-top:5px;">重要任務改用有來源或指定資料的工具。</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FIVE STAGES ===== -->
+  <div class="slide" style="background:linear-gradient(145deg,#050C2A,#0D1B4B);flex-direction:column;text-align:center;padding:30px 50px;">
+    <div style="width:100%;max-width:1150px;">
+      <div class="current-pill" style="margin-bottom:14px;">● 2026 觀察重點：第 3 階段 AI Agent</div>
+      <h2 style="font-size:38px;font-weight:900;margin-bottom:16px;">從會對話、會思考，到會採取行動</h2>
+      <img src="ai-five-stage-blueprint.png" class="full-image" alt="AI 發展五階段藍圖，第三階段代理人特別標示">
+      <p class="source-note" style="margin-top:9px;">本圖以五階段作為課堂理解框架；「目前進入 Agent 時代」用來描述工具能力與工作方式的轉變，不代表所有 AI 均已達到相同成熟度。</p>
+    </div>
+  </div>
+
+  <!-- ===== AGENT ERA ===== -->
+  <div class="slide" style="background:linear-gradient(135deg,#090E2D,#28115A 58%,#0D2B55);flex-direction:column;align-items:flex-start;">
+    <div style="width:100%;max-width:1030px;">
+      <div class="tag" style="margin-bottom:14px;background:rgba(108,63,197,.23);color:#e0d6ff;border-color:rgba(184,156,255,.65);">AI AGENT</div>
+      <h2 style="font-size:44px;font-weight:900;">AI 不只回答，而是替你完成一段工作</h2>
+      <p style="font-size:17px;color:var(--white-70);margin-top:10px;">Agent 的關鍵不是「更會聊天」，而是理解目標、規劃步驟、使用工具並驗證成果。</p>
+      <div class="agent-flow">
+        <div class="agent-step"><strong>1 理解目標</strong><span>知道最後要完成什麼</span></div>
+        <div class="agent-step"><strong>2 拆解規劃</strong><span>把任務排成可執行步驟</span></div>
+        <div class="agent-step"><strong>3 使用工具</strong><span>搜尋、讀檔、寫作或操作</span></div>
+        <div class="agent-step"><strong>4 執行修正</strong><span>遇到問題會調整方法</span></div>
+        <div class="agent-step"><strong>5 交付成果</strong><span>完成並檢查可用的成品</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:18px;">
+        <div class="glass-card"><h3 style="color:var(--cyan-light);margin-bottom:8px;">現場示範：給目標，不只給問題</h3><p style="color:var(--white-70);line-height:1.75;">例如：「整理研習內容、讀取既有網頁、更新教材、檢查連結，最後交付可分享的網站。」</p></div>
+        <div class="glass-card"><h3 style="color:var(--purple-light);margin-bottom:8px;">人仍在回路中</h3><p style="color:var(--white-70);line-height:1.75;">人類設定目標、授權範圍、判斷風險，並對最後結果負責。</p></div>
+      </div>
+      <div class="resource-actions"><a href="https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf" target="_blank" rel="noopener" class="btn-outline">OpenAI Agents 延伸閱讀</a></div>
+    </div>
+  </div>
+
+  <!-- ===== CHATGPT OPENER ===== -->
+  <div class="slide" style="background:linear-gradient(150deg,#050C2A,#0B3156);flex-direction:column;align-items:flex-start;">
+    <div style="width:100%;max-width:960px;">
+      <div class="tag" style="margin-bottom:14px;">LET AI SPEAK</div>
+      <h2 style="font-size:42px;font-weight:900;">讓 ChatGPT 自己介紹今天的研習</h2>
+      <div class="deco-line"></div>
+      <div class="prompt-box" style="font-size:22px;margin:25px 0;">「今天這場 B5-1 生成式 AI 研習，我們要學什麼？」</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div class="glass-card"><h3 style="color:var(--cyan-light);margin-bottom:9px;">今天會學</h3><p style="color:var(--white-70);line-height:1.8;">AI 基本概念與趨勢、Prompt、任務選工具、AI Agent、教學融入、教育資源、AI 素養與倫理。</p></div>
+        <div class="glass-card"><h3 style="color:var(--purple-light);margin-bottom:9px;">今天不追求</h3><p style="color:var(--white-70);line-height:1.8;">不教寫程式、不追逐「最強工具」、不宣稱 AI 取代老師，也不把 AI 回答當成標準答案。</p></div>
+      </div>
+      <div class="resource-actions"><a href="https://chatgpt.com/" target="_blank" rel="noopener" class="btn-primary">開啟 ChatGPT</a></div>
+    </div>
+  </div>
+
+  <!-- ===== PROMPT ===== -->
+  <div class="slide" style="background:linear-gradient(160deg,#050C2A,#15114A);flex-direction:column;align-items:flex-start;">
+    <div style="width:100%;max-width:980px;">
+      <div class="tag" style="margin-bottom:14px;">PROMPT</div>
+      <h2 style="font-size:42px;font-weight:900;">從「問 AI」進階到「把任務說清楚」</h2>
+      <div class="deco-line"></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0;">
+        <div class="glass-card"><div style="font-size:28px;">👤</div><h3 style="color:var(--cyan-light);margin:8px 0;">角色與對象</h3><p style="font-size:13px;color:var(--white-70);">你是誰？成果給誰使用？</p></div>
+        <div class="glass-card"><div style="font-size:28px;">🎯</div><h3 style="color:var(--cyan-light);margin:8px 0;">目標與情境</h3><p style="font-size:13px;color:var(--white-70);">要解決什麼問題？使用在哪裡？</p></div>
+        <div class="glass-card"><div style="font-size:28px;">📎</div><h3 style="color:var(--cyan-light);margin:8px 0;">資料與限制</h3><p style="font-size:13px;color:var(--white-70);">依據哪些內容？不能做什麼？</p></div>
+        <div class="glass-card"><div style="font-size:28px;">📦</div><h3 style="color:var(--cyan-light);margin:8px 0;">格式與檢核</h3><p style="font-size:13px;color:var(--white-70);">如何呈現？怎樣算完成？</p></div>
+      </div>
+      <div class="prompt-box">我是國小【年級／領域】教師。請依照【資料或課程主題】，為【學習者】設計【成果】，包含【指定欄位】，並遵守【限制】。完成後請用【檢核標準】自我檢查。</div>
+      <div class="resource-actions">
+        <button type="button" class="btn-primary" onclick="openPromptLibrary()">開啟提示詞操作中心</button>
+        <a href="https://docs.google.com/document/d/15XWItKCS6yQj-_xm4-BbChhSjKjWw_vIpLMpErcrZR0/edit?tab=t.0" target="_blank" rel="noopener" class="btn-outline">查看完整操作筆記</a>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== SLIDE 8: COMMON AI TOOLS ===== -->
   <div class="slide" style="background: linear-gradient(160deg, #050C2A, #0D1B4B); flex-direction:column; align-items:flex-start;">
     <img src="slide-aitools_20260514_210738.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.08;mix-blend-mode:screen;">
     <div style="width:100%;max-width:960px;">
       <div class="tag" style="margin-bottom:14px;">AI TOOLS</div>
-      <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">常見生成式AI介紹</h2>
+      <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">不是哪個 AI 最強，而是哪個最適合這個任務</h2>
       <div class="deco-line" style="margin-bottom:20px;"></div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
         <!-- 搜尋型 -->
         <div>
-          <p style="color:var(--cyan-light);font-size:14px;font-weight:700;margin-bottom:12px;">🔍 搜尋型AI（通用對話）</p>
+          <p style="color:var(--cyan-light);font-size:14px;font-weight:700;margin-bottom:12px;">💬 生成、討論與創作</p>
           <div style="display:flex;flex-direction:column;gap:10px;">
             <a href="https://gemini.google.com/app" target="_blank" class="glass-card" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;padding:14px 18px;transition:all 0.2s;">
               <span style="font-size:24px;">🔷</span>
-              <div><p style="font-weight:700;font-size:15px;color:var(--cyan-light);">Gemini</p><p style="font-size:12px;color:var(--white-70);">Google 開發・多模態 AI</p></div>
+              <div><p style="font-weight:700;font-size:15px;color:var(--cyan-light);">Gemini</p><p style="font-size:12px;color:var(--white-70);">多模態理解・生成與研究</p></div>
             </a>
             <a href="https://chatgpt.com/" target="_blank" class="glass-card" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;padding:14px 18px;transition:all 0.2s;">
               <span style="font-size:24px;">🟢</span>
-              <div><p style="font-weight:700;font-size:15px;color:var(--cyan-light);">ChatGPT</p><p style="font-size:12px;color:var(--white-70);">OpenAI・最廣泛使用</p></div>
+              <div><p style="font-weight:700;font-size:15px;color:var(--cyan-light);">ChatGPT</p><p style="font-size:12px;color:var(--white-70);">對話生成・推理與 Agent 工作</p></div>
             </a>
             <a href="https://claude.ai/" target="_blank" class="glass-card" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;padding:14px 18px;transition:all 0.2s;">
               <span style="font-size:24px;">🟠</span>
@@ -627,11 +1249,11 @@
         </div>
         <!-- 限定範圍型 -->
         <div>
-          <p style="color:var(--cyan-light);font-size:14px;font-weight:700;margin-bottom:12px;">📁 限定資料範圍AI</p>
+          <p style="color:var(--cyan-light);font-size:14px;font-weight:700;margin-bottom:12px;">🔎 搜尋即時資訊與指定資料</p>
           <div style="display:flex;flex-direction:column;gap:10px;">
             <a href="https://notebooklm.google.com/" target="_blank" class="glass-card" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;padding:14px 18px;transition:all 0.2s;">
               <span style="font-size:24px;">📒</span>
-              <div><p style="font-weight:700;font-size:15px;color:var(--cyan-light);">NotebookLM</p><p style="font-size:12px;color:var(--white-70);">上傳檔案・精準分析摘要</p></div>
+              <div><p style="font-weight:700;font-size:15px;color:var(--cyan-light);">Gemini Notebook</p><p style="font-size:12px;color:var(--white-70);">原 NotebookLM・依指定來源分析</p></div>
             </a>
             <a href="https://www.perplexity.ai/" target="_blank" class="glass-card" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;padding:14px 18px;transition:all 0.2s;">
               <span style="font-size:24px;">🌊</span>
@@ -641,10 +1263,10 @@
               <span style="font-size:24px;">🔵</span>
               <div><p style="font-weight:700;font-size:15px;color:var(--cyan-light);">Felo</p><p style="font-size:12px;color:var(--white-70);">繁體中文搜尋・支援中文</p></div>
             </a>
-            <div class="glass-card" style="display:flex;align-items:center;gap:12px;padding:14px 18px;opacity:0.5;">
+            <a href="https://www.google.com/" target="_blank" rel="noopener" class="glass-card" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;padding:14px 18px;">
               <span style="font-size:24px;">🔴</span>
-              <div><p style="font-weight:700;font-size:15px;color:var(--white-70);">Google AI 模式</p><p style="font-size:12px;color:var(--white-70);">Google 搜尋 AI 整合版</p></div>
-            </div>
+              <div><p style="font-weight:700;font-size:15px;color:var(--cyan-light);">Google AI 模式</p><p style="font-size:12px;color:var(--white-70);">搜尋較即時資訊・追溯網頁來源</p></div>
+            </a>
           </div>
         </div>
       </div>
@@ -656,38 +1278,38 @@
     <img src="slide-eduai_20260514_210837.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.08;mix-blend-mode:screen;">
     <div style="width:100%;max-width:960px;">
       <div class="tag" style="margin-bottom:14px;">教育型 AI</div>
-      <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">教育專屬 AI 工具</h2>
+      <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">回到臺灣教育現場：官方資源與出版社工具</h2>
       <div class="deco-line" style="margin-bottom:16px;"></div>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
-        <a href="https://aiteach.knsh.com.tw/index/index.html" target="_blank" class="tool-card">
-          <div class="tool-icon">📚</div>
-          <div class="tool-name">康軒AI高手</div>
-          <div class="tool-desc">AI寫作批改・教材輔助</div>
-        </a>
-        <a href="https://114ai.hle.com.tw/e/index.html" target="_blank" class="tool-card">
+        <a href="https://adl.edu.tw/HomePage/home/index.php" target="_blank" rel="noopener" class="tool-card">
           <div class="tool-icon">🎯</div>
-          <div class="tool-name">因材網</div>
-          <div class="tool-desc">個人化學習・引導式寫作</div>
+          <div class="tool-name">因材網 e 度</div>
+          <div class="tool-desc">AI 對話紀錄・報表與學習輔導</div>
         </a>
-        <a href="https://nanibot.nani.com.tw/" target="_blank" class="tool-card">
+        <a href="https://www.coolenglish.edu.tw/" target="_blank" rel="noopener" class="tool-card">
+          <div class="tool-icon">🎙️</div>
+          <div class="tool-name">酷英 Whisper</div>
+          <div class="tool-desc">AI 生成文章・篇章口說評測</div>
+        </a>
+        <a href="https://aiteach.knsh.com.tw/index/index.html" target="_blank" rel="noopener" class="tool-card">
+          <div class="tool-icon">📚</div>
+          <div class="tool-name">康軒 AI 高手</div>
+          <div class="tool-desc">AI 寫作批改・教材輔助</div>
+        </a>
+        <a href="https://114ai.hle.com.tw/e/index.html" target="_blank" rel="noopener" class="tool-card">
+          <div class="tool-icon">🔗</div>
+          <div class="tool-name">翰林 AI 連線未來</div>
+          <div class="tool-desc">出版社 AI 教學應用資源</div>
+        </a>
+        <a href="https://nanibot.nani.com.tw/" target="_blank" rel="noopener" class="tool-card">
           <div class="tool-icon">🤖</div>
           <div class="tool-name">南一 NaniBot</div>
-          <div class="tool-desc">南一書局AI助手</div>
+          <div class="tool-desc">AI 學習互動・教學輔助</div>
         </a>
-        <a href="https://www.edcafetw.com/" target="_blank" class="tool-card">
-          <div class="tool-icon">☕</div>
-          <div class="tool-name">Edcafe AI</div>
-          <div class="tool-desc">AI助教・錯字修正・問答</div>
-        </a>
-        <a href="https://www.magicschool.ai/" target="_blank" class="tool-card">
-          <div class="tool-icon">🪄</div>
-          <div class="tool-name">MagicSchool AI</div>
-          <div class="tool-desc">教師AI工具集・備課神器</div>
-        </a>
-        <a href="https://ta.padlet.com/" target="_blank" class="tool-card">
+        <a href="https://padlet.com/ab0308/b5-1-ai-0818-6j71t2ysovddfbpa" target="_blank" rel="noopener" class="tool-card">
           <div class="tool-icon">📌</div>
-          <div class="tool-name">Padlet</div>
-          <div class="tool-desc">互動白板・課堂協作</div>
+          <div class="tool-name">本次研習 Padlet</div>
+          <div class="tool-desc">簡報、操作筆記與示範資源</div>
         </a>
       </div>
     </div>
@@ -780,16 +1402,15 @@
           <h3 style="color:var(--cyan-light);font-size:17px;font-weight:700;margin-bottom:10px;">作文批改</h3>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
             <li style="font-size:14px;color:var(--white-70);">✦ 康軒AI寫作批改</li>
-            <li style="font-size:14px;color:var(--white-70);">✦ 酷英AI增錯</li>
+              <li style="font-size:14px;color:var(--white-70);">✦ 酷英 AI 寫作除錯</li>
             <li style="font-size:14px;color:var(--white-70);">✦ 即時回饋建議</li>
             <li style="font-size:14px;color:var(--white-70);">✦ 寫作引導輔助</li>
           </ul>
         </div>
       </div>
       <div style="margin-top:20px;">
-        <a href="https://docs.google.com/document/d/15XWItKCS6yQj-_xm4-BbChhSjKjWw_vIpLMpErcrZR0/edit?usp=sharing" target="_blank" class="btn-primary">
-          📄 開啟操作筆記
-        </a>
+        <button type="button" class="btn-primary" onclick="openPromptLibrary('teacher')">開啟教師實作提示詞</button>
+        <a href="https://docs.google.com/document/d/15XWItKCS6yQj-_xm4-BbChhSjKjWw_vIpLMpErcrZR0/edit?tab=t.0" target="_blank" rel="noopener" class="btn-outline">查看完整操作筆記</a>
       </div>
     </div>
   </div>
@@ -819,41 +1440,34 @@
           <a href="https://gemini.google.com/app" target="_blank" class="btn-primary" style="width:100%;justify-content:center;">
             🔷 開啟 Gemini
           </a>
+          <button type="button" class="btn-outline" onclick="openPromptLibrary('teacher')" style="width:100%;justify-content:center;margin-top:10px;background:rgba(0,194,224,.08);">複製本活動提示詞</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ===== SLIDE 13: NOTEBOOKLM PRACTICE ===== -->
-  <div class="slide" style="background: linear-gradient(160deg, #050C2A, #0D1B4B); flex-direction:column; align-items:flex-start;">
-    <img src="slide-notebook_20260514_211007.png" style="position:absolute;right:0;top:0;width:45%;height:100%;object-fit:cover;opacity:0.13;mask-image:linear-gradient(to left,rgba(0,0,0,0.5),transparent);">
-    <div style="width:100%;max-width:900px;">
-      <div class="tag" style="margin-bottom:14px;background:rgba(108,63,197,0.2);color:var(--purple-light);border-color:rgba(108,63,197,0.4);">實作活動二</div>
-      <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">📒 NotebookLM 體驗</h2>
-      <div class="deco-line" style="margin-bottom:20px;"></div>
-      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start;">
+  <!-- ===== GEMINI NOTEBOOK PRACTICE ===== -->
+  <div class="slide" style="background:linear-gradient(160deg,#050C2A,#0D1B4B,#1A1060);flex-direction:column;align-items:flex-start;">
+    <div style="width:100%;max-width:1020px;">
+      <div class="tag" style="margin-bottom:14px;background:rgba(108,63,197,.2);color:var(--purple-light);border-color:rgba(108,63,197,.4);">實作活動二・2026 新名稱</div>
+      <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">📒 Gemini Notebook 體驗</h2>
+      <p style="color:var(--white-70);margin-top:8px;">原 NotebookLM 已更名為 Gemini Notebook；仍是獨立的研究與學習工具。</p>
+      <div class="deco-line" style="margin-bottom:18px;"></div>
+      <div style="display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:start;">
         <div>
           <ul class="step-list">
-            <li><div class="step-num">1</div><p style="font-size:17px;padding-top:3px;">開啟 NotebookLM，<strong style="color:var(--cyan-light);">建立新筆記本</strong></p></li>
-            <li><div class="step-num">2</div><p style="font-size:17px;padding-top:3px;"><strong style="color:var(--cyan-light);">上傳你的教學資料</strong>（PDF/文件）</p></li>
-            <li><div class="step-num">3</div><p style="font-size:17px;padding-top:3px;">讓AI幫你<strong style="color:var(--cyan-light);">摘要內容</strong></p></li>
-            <li><div class="step-num">4</div><p style="font-size:17px;padding-top:3px;">整理重點，<strong style="color:var(--cyan-light);">生成學習指南</strong></p></li>
-            <li><div class="step-num">5</div><p style="font-size:17px;padding-top:3px;">試試 <strong style="color:var(--cyan-light);">Audio Overview</strong> 功能</p></li>
+            <li><div class="step-num">1</div><p style="font-size:16px;padding-top:3px;">建立筆記本，加入<strong style="color:var(--cyan-light);">教學資料與可信來源</strong></p></li>
+            <li><div class="step-num">2</div><p style="font-size:16px;padding-top:3px;">針對來源提問，查看<strong style="color:var(--cyan-light);">行內引用</strong></p></li>
+            <li><div class="step-num">3</div><p style="font-size:16px;padding-top:3px;">生成摘要、學習指南、心智圖與測驗</p></li>
+            <li><div class="step-num">4</div><p style="font-size:16px;padding-top:3px;">試做 <strong style="color:var(--cyan-light);">Audio／Video Overview</strong></p></li>
           </ul>
+          <div class="glass-card" style="margin-top:16px;padding:16px 18px;"><p style="font-size:14px;color:var(--white-70);line-height:1.7;"><strong style="color:var(--cyan-light);">重點：</strong>需要有資料依據的任務，就讓 AI 先讀你指定的資料，再回答與生成。</p></div>
         </div>
         <div>
-          <div class="glass-card" style="margin-bottom:16px;">
-            <p style="color:var(--cyan-light);font-size:13px;font-weight:700;margin-bottom:8px;">🎯 NotebookLM 特色</p>
-            <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;">
-              <li style="font-size:14px;color:var(--white-70);">✦ 只回答上傳資料的內容</li>
-              <li style="font-size:14px;color:var(--white-70);">✦ 自動摘要與問答</li>
-              <li style="font-size:14px;color:var(--white-70);">✦ 生成 Podcast 音頻</li>
-              <li style="font-size:14px;color:var(--white-70);">✦ 支援多種文件格式</li>
-            </ul>
-          </div>
-          <a href="https://notebooklm.google.com/" target="_blank" class="btn-primary" style="width:100%;justify-content:center;">
-            📒 開啟 NotebookLM
-          </a>
+          <img src="gemini-notebook-renamed.png" alt="NotebookLM 更名為 Gemini Notebook" style="width:100%;border-radius:14px;background:white;box-shadow:0 16px 44px rgba(0,0,0,.3);">
+          <a href="https://notebooklm.google.com/" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;margin-top:16px;">開始使用 Gemini Notebook</a>
+          <button type="button" class="btn-outline" onclick="openPromptLibrary('teacher')" style="width:100%;justify-content:center;margin-top:10px;background:rgba(0,194,224,.08);">複製命題與分析提示詞</button>
+          <p class="source-note" style="margin-top:9px;">名稱更新依據：<a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" target="_blank" rel="noopener" style="color:var(--cyan-light);">Google 官方於 2026 年 7 月 16 日公告</a>。</p>
         </div>
       </div>
     </div>
@@ -892,7 +1506,7 @@
           <div style="display:flex;flex-direction:column;gap:10px;">
             <div class="glass-card" style="padding:14px 18px;">
               <h4 style="color:var(--cyan-light);font-size:15px;font-weight:700;margin-bottom:4px;">🇬🇧 酷英</h4>
-              <p style="font-size:13px;color:var(--white-70);">AI寫作增錯・英語學習應用・語音辨識</p>
+              <p style="font-size:13px;color:var(--white-70);">AI 寫作除錯・英語學習應用・語音辨識</p>
             </div>
             <div class="glass-card" style="padding:14px 18px;">
               <h4 style="color:var(--cyan-light);font-size:15px;font-weight:700;margin-bottom:4px;">🎯 因材網</h4>
@@ -909,6 +1523,9 @@
           </div>
         </div>
       </div>
+      <div class="resource-actions" style="margin-top:16px;">
+        <button type="button" class="btn-primary" onclick="openPromptLibrary('student')">開啟學生學習提示詞</button>
+      </div>
     </div>
   </div>
 
@@ -917,7 +1534,7 @@
     <img src="slide-warning_20260514_211047.png" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.1;mix-blend-mode:screen;">
     <div style="width:100%;max-width:960px;">
       <div class="tag" style="margin-bottom:14px;background:rgba(220,80,80,0.15);color:#FF8A8A;border-color:rgba(220,80,80,0.3);">使用注意</div>
-      <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">AI 使用注意事項</h2>
+      <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">最後一定要回到：AI 素養與 AI 倫理</h2>
       <div class="deco-line" style="margin-bottom:20px;"></div>
       <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
         <div class="warn-card" style="background:rgba(255,160,0,0.1);border:1px solid rgba(255,160,0,0.3);">
@@ -938,7 +1555,7 @@
           <span style="font-size:30px;flex-shrink:0;">⚖️</span>
           <div>
             <h3 style="color:var(--purple-light);font-size:16px;font-weight:700;margin-bottom:6px;">AI 倫理</h3>
-            <p style="font-size:14px;color:var(--white-70);line-height:1.6;"><strong style="color:white;">尊重智慧財產權</strong>，AI生成的內容需標注來源，不可過度依賴AI。</p>
+            <p style="font-size:14px;color:var(--white-70);line-height:1.6;"><strong style="color:white;">尊重智慧財產權</strong>，揭露 AI 協作並標示可查核的資料來源。</p>
           </div>
         </div>
         <div class="warn-card" style="background:rgba(0,194,224,0.1);border:1px solid rgba(0,194,224,0.3);">
@@ -959,37 +1576,285 @@
     <div class="deco-circle" style="width:400px;height:400px;bottom:-100px;right:-100px;background:radial-gradient(circle,rgba(0,194,224,0.2),transparent 70%);"></div>
     <div style="position:absolute;top:0;left:0;width:100%;height:100%;background-image:radial-gradient(circle,rgba(255,255,255,0.6) 1px,transparent 1px);background-size:70px 70px;opacity:0.06;"></div>
     <div style="position:relative;z-index:1;max-width:780px;">
-      <div style="font-size:56px;margin-bottom:16px;filter:drop-shadow(0 0 20px rgba(0,194,224,0.5));">🚀</div>
+      <div style="font-size:56px;margin-bottom:16px;filter:drop-shadow(0 0 20px rgba(0,194,224,0.5));">🤝</div>
       <h2 style="font-size:50px;font-weight:900;line-height:1.3;margin-bottom:20px;">
-        AI <span style="color:var(--white-70);font-size:36px;">不是</span> 取代老師<br>
-        <span style="background:linear-gradient(90deg,var(--cyan),var(--purple-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">而是協助老師提升效率</span>
+        不是把思考交給 AI<br>
+        <span class="gradient-text">而是讓人腦與 AI 共舞</span>
       </h2>
       <div class="deco-line" style="margin:0 auto 20px;width:80px;"></div>
-      <p style="font-size:18px;color:var(--white-70);margin-bottom:32px;">幫助學生進行更個人化的學習體驗 🌟</p>
+      <p style="font-size:18px;color:var(--white-70);margin-bottom:32px;">AI 負責加速，人類負責判斷；AI 輔助教學，不取代教學。</p>
       <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:28px;">
-        <div class="glass-card" style="padding:12px 20px;"><span style="font-size:15px;">💬 問題討論</span></div>
-        <div class="glass-card" style="padding:12px 20px;"><span style="font-size:15px;">🤝 教學交流</span></div>
-        <div class="glass-card" style="padding:12px 20px;"><span style="font-size:15px;">💡 分享使用心得</span></div>
+        <div class="glass-card" style="padding:12px 20px;"><span style="font-size:15px;">⚡ AI 加速</span></div>
+        <div class="glass-card" style="padding:12px 20px;"><span style="font-size:15px;">🧭 人類判斷</span></div>
+        <div class="glass-card" style="padding:12px 20px;"><span style="font-size:15px;">🎓 教師引導</span></div>
       </div>
-      <p style="font-size:14px;color:var(--white-30);">許凱琳 老師 ・ 新北市大豐國小 ・ 教育部 B5-1 生成式AI工作坊</p>
+      <p style="font-size:14px;color:var(--white-30);">今天帶走的不只是幾個 AI 工具，而是一種新的工作方式與教育態度。</p>
     </div>
   </div>
 
 </div>
 
+<!-- Prompt library: copied and reorganized from the workshop operation notes -->
+<div class="prompt-modal" id="promptModal" role="dialog" aria-modal="true" aria-labelledby="promptLibraryTitle" onclick="closePromptLibrary(event)">
+  <section class="prompt-library" onclick="event.stopPropagation()">
+    <header class="prompt-library-head">
+      <div>
+        <h2 id="promptLibraryTitle">提示詞操作中心</h2>
+        <p>先從目錄選擇實作項目，再查看、捲動並複製完整提示詞。</p>
+        <button class="prompt-back" id="promptBack" type="button" hidden onclick="showPromptIndex()">← 回到提示詞目錄</button>
+      </div>
+      <button class="prompt-close" type="button" aria-label="關閉提示詞操作中心" onclick="closePromptLibrary()">×</button>
+    </header>
+    <nav class="prompt-filters" aria-label="提示詞分類">
+      <button type="button" class="prompt-filter active" data-filter="all" onclick="filterPrompts('all',this)">全部</button>
+      <button type="button" class="prompt-filter" data-filter="teacher" onclick="filterPrompts('teacher',this)">教師備課與評量</button>
+      <button type="button" class="prompt-filter" data-filter="creative" onclick="filterPrompts('creative',this)">圖像與創作</button>
+      <button type="button" class="prompt-filter" data-filter="multimodal" onclick="filterPrompts('multimodal',this)">多模態應用</button>
+      <button type="button" class="prompt-filter" data-filter="coding" onclick="filterPrompts('coding',this)">互動遊戲</button>
+      <button type="button" class="prompt-filter" data-filter="student" onclick="filterPrompts('student',this)">學生學習</button>
+    </nav>
+    <div class="prompt-list" id="promptList">
+      <details class="prompt-card" data-category="teacher">
+        <summary>教案改造｜四學模式</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>你是一位具有 20 年資歷的國小課程設計師。
+請將以下傳統教案改寫為符合「科技輔助自主學習（四學模式）」的數位教案：
+【自學】學生透過影片或 AI 先備知識
+【共學】小組討論任務設計
+【探究】問題引導與實作活動
+【應用】學習成果展示方式
+---（附上原始教案）---
+請以表格方式輸出，每個階段說明在 50 字以內。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="teacher">
+        <summary>多元教材｜學習網頁</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>請針對「[單元主題]」，製作一份適合國小[年級]學生的學習網頁。
+內容需包含：
+✦ 主題知識卡（3 張，每張 80 字以內）
+✦ 重點圖解（文字搭配 emoji 呈現）
+✦ 隨堂小測驗（3 題選擇題）
+視覺風格：日系簡約可愛風，配色柔和，適合兒童閱讀。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="teacher">
+        <summary>自動命題｜PDF 教材</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>你是一位資深的國小自然科教師。
+請根據以下教材內容，出一份單元小測驗，包含：
+✦ 單選題 5 題（每題 4 個選項）
+✦ 是非題 3 題
+✦ 填充題 2 題
+要求：
+✦ 題目需涵蓋不同認知層次（記憶、理解、應用）
+✦ 每題附上答案與 30 字以內的解析
+✦ 輸出格式：Markdown 表格
+---（貼上 PDF 內容或單元摘要）---</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="teacher multimodal">
+        <summary>影片命題｜YouTube</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>以下是一段教學影片的逐字稿內容（來源：[YouTube 連結]）：
+---（貼上 Gemini Notebook 擷取的逐字稿）---
+請根據以上內容出題：
+✦ 選擇題 3 題（測驗影片核心概念）
+✦ 簡答題 1 題（引導學生回顧影片重點）
+題目語氣親切，適合國小高年級學生。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="teacher">
+        <summary>命題校稿｜雙向細目分析</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>以下是本次期中考的試題（來源一）與單元學習目標清單（來源二）。
+請進行雙向細目分析：
+✦ 以表格呈現每道題目對應的學習目標
+✦ 標示「未涵蓋」的學習目標
+✦ 判斷各認知層次（記憶／理解／應用／分析）的題目分佈是否均衡
+✦ 提供修題建議（若有）
+輸出格式：Markdown 表格 + 分析摘要（200 字以內）</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="teacher">
+        <summary>Gemini Gem｜提示詞工程師</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>【角色設定】
+你是一位資深的提示詞工程師（Prompt Engineer），擅長將模糊的教學需求轉化為結構嚴謹、邏輯清晰的 AI 指令。
+
+【任務目標】
+根據老師提供的「原始想法」，擴充並優化為包含以下結構的專業提示詞：
+▸ 核心任務　▸ 角色定位　▸ 背景資訊
+▸ 限制條件　▸ 輸出格式　▸ 範例說明（選填）
+
+【操作方式】
+老師只需輸入一句話的原始想法，Gem 會自動擴展為完整指令。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="teacher">
+        <summary>作文批改｜四項規準</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>你是一位具有豐富經驗的國小語文老師。
+請根據以下評分規準，批改這篇學生作文：
+【內容】（30 分）：主題明確、內容豐富、有個人觀點
+【組織】（30 分）：段落分明、首尾呼應、邏輯通順
+【用詞】（20 分）：詞語豐富、表達準確、避免重複
+【標點】（20 分）：標點符號使用正確
+請輸出：各項得分 + 具體優點 + 可改進之處（各 2 點）+ 整體建議（50 字）
+語氣鼓勵，適合給國小學生閱讀。
+---（貼上學生作文）---</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="creative">
+        <summary>課文漫畫化｜四格腳本</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>請將以下課文內容改編成一部 4 格漫畫：
+✦ 主角：小學生阿明（活潑好奇）
+✦ 場景：自然教室
+✦ 內容重點：[貼入課文核心概念]
+✦ 風格：明亮活潑的兒童漫畫風，對話輕鬆有趣
+✦ 每格附上 20 字以內的對話或旁白
+請以分格說明方式輸出腳本（第 1 格、第 2 格……）。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="creative">
+        <summary>Storybook｜繪本腳本</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>你是一位兒童繪本作家。
+請將以下課文內容改寫為一本適合國小[年級]學生閱讀的繪本腳本：
+✦ 共 6 頁，每頁一個場景
+✦ 每頁包含：【畫面描述】（20 字）+【頁面文字】（30 字以內）
+✦ 語氣溫暖有趣，用詞簡單
+✦ 插圖風格：水彩童書風，色彩柔和
+---（貼上課文段落）---
+輸出格式：
+第 1 頁｜畫面：＿＿｜文字：＿＿
+第 2 頁｜畫面：＿＿｜文字：＿＿（以此類推）</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="multimodal">
+        <summary>影片轉學習單｜多模態</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>我上傳了一段教學影片（或 YouTube 連結：[網址]）。
+請根據影片內容完成以下任務：
+✦ 整理出 5 個核心重點（條列式）
+✦ 針對每個重點出一道填充題
+✦ 最後附上 1 個開放式思考問題
+輸出格式：適合直接列印的學習單版面，標題為「[影片主題] 學習單」，適用年級：國小[年級]。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="multimodal creative">
+        <summary>圖片風格分析｜YAML 仿製教材</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>【第一步｜分析圖片風格】
+請分析我上傳的這張教材圖片，以 YAML 格式輸出視覺風格：
+style:
+  overall_tone:
+  color_palette: []
+  layout:
+  illustration_style:
+  mood:
+
+【第二步｜生成同風格教材】
+請根據以下 YAML 風格設定，為我製作「[單元主題]」的學習卡：
+---（貼上第一步產出的 YAML）---
+內容：重點整理 3 條 + 練習題 2 題，每張卡限 80 字。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="coding">
+        <summary>Canvas Vibe Coding｜互動遊戲</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>請在 Canvas 中設計一個互動學習小遊戲：
+【學科】[語文 / 數學 / 自然 / 社會]
+【主題】[指定單元或詞彙範圍]
+【玩法】[打地鼠 / 貪食蛇 / 射擊 / 彈珠台 / 翻牌配對]
+【難度】適合國小[年級]學生
+【功能】計分板、倒數計時（60 秒）、答題音效、重玩按鈕
+【視覺】Q 版可愛風格，色彩鮮明，操作直觀
+請直接輸出完整 HTML 程式碼，不需解釋，可在瀏覽器直接開啟。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="student">
+        <summary>學生自學｜三種解釋</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>我是國小[年級]學生，我不懂「[概念名稱]」是什麼意思。
+請給我三種解釋：
+版本 A：用我生活中常見的例子解釋（最簡單）
+版本 B：用一個小故事或比喻解釋（中等）
+版本 C：用正確的科學／學科用語解釋（較完整）
+最後請問我一個問題，測試我有沒有真的懂。</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+
+      <details class="prompt-card" data-category="student">
+        <summary>引導式訂正｜先思考再看答案</summary>
+        <div class="prompt-card-body">
+          <textarea readonly>我寫了一道題目的答案，請不要直接告訴我對錯。
+題目：[貼上題目]
+我的答案：[貼上作答]
+請：
+1. 問我一個問題，讓我自己思考是否正確
+2. 如果我想放棄，再提示一個線索
+3. 最後才告訴我正確答案並說明原因</textarea>
+          <button type="button" class="copy-prompt" onclick="copyPrompt(this)">複製提示詞</button>
+        </div>
+      </details>
+    </div>
+  </section>
+</div>
+
 <!-- Progress & Counter -->
+<label class="slide-menu" for="slideSelect">
+  <span>快速跳頁</span>
+  <select id="slideSelect" aria-label="選擇投影片"></select>
+</label>
 <div class="progress-bar" id="progressBar"></div>
-<div class="slide-counter" id="slideCounter">1 / 17</div>
-<div class="nav-hint">← → 鍵換頁　Space 下一頁　點擊畫面前進</div>
+<div class="slide-counter" id="slideCounter" aria-live="polite">1 / …</div>
+<div class="nav-hint">使用畫面箭頭或鍵盤 ← → 換頁</div>
 
 <!-- Nav buttons -->
-<button class="nav-btn left" id="prevBtn" onclick="goTo(current-1)">‹</button>
-<button class="nav-btn right" id="nextBtn" onclick="goTo(current+1)">›</button>
+<button class="nav-btn left" id="prevBtn" type="button" aria-label="上一頁" onclick="goTo(current-1)">‹</button>
+<button class="nav-btn right" id="nextBtn" type="button" aria-label="下一頁" onclick="goTo(current+1)">›</button>
 
 <script>
   const slides = document.querySelectorAll('.slide');
+  const slideSelect = document.getElementById('slideSelect');
   let current = 0;
   let isAnimating = false;
+
+  slides.forEach((slide, index) => {
+    const heading = slide.querySelector('h1, h2');
+    const title = slide.dataset.slideTitle || (heading ? heading.textContent.replace(/\s+/g, ' ').trim() : '未命名頁面');
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = (index + 1) + '｜' + title;
+    slideSelect.appendChild(option);
+  });
 
   function goTo(n) {
     if (isAnimating) return;
@@ -1012,32 +1877,99 @@
     const pct = ((current + 1) / slides.length) * 100;
     document.getElementById('progressBar').style.width = pct + '%';
     document.getElementById('slideCounter').textContent = (current + 1) + ' / ' + slides.length;
-
-    // Prevent link clicks from advancing slide
+    slideSelect.value = String(current);
+    history.replaceState(null, '', '#slide-' + (current + 1));
   }
 
   // Init
   slides[0].classList.add('active');
   document.getElementById('progressBar').style.width = (1 / slides.length * 100) + '%';
+  document.getElementById('slideCounter').textContent = '1 / ' + slides.length;
+  slideSelect.value = '0';
+
+  slideSelect.addEventListener('change', e => goTo(Number(e.target.value)));
+
+  const promptModal = document.getElementById('promptModal');
+  const promptLibrary = document.querySelector('.prompt-library');
+  const promptList = document.getElementById('promptList');
+  const promptBack = document.getElementById('promptBack');
+  let promptDetailChanging = false;
+
+  document.querySelectorAll('.prompt-card').forEach(card => {
+    card.addEventListener('toggle', () => {
+      if (!card.open || promptDetailChanging) return;
+      promptDetailChanging = true;
+      document.querySelectorAll('.prompt-card').forEach(item => {
+        if (item !== card) item.open = false;
+        item.classList.toggle('selected', item === card);
+      });
+      promptLibrary.classList.add('detail-mode');
+      promptList.classList.add('detail-mode');
+      promptBack.hidden = false;
+      promptList.scrollTop = 0;
+      setTimeout(() => { promptDetailChanging = false; }, 0);
+    });
+  });
+
+  function openPromptLibrary(category = 'all') {
+    promptModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const filterButton = document.querySelector(`.prompt-filter[data-filter="${category}"]`) || document.querySelector('.prompt-filter[data-filter="all"]');
+    filterPrompts(filterButton.dataset.filter, filterButton);
+    setTimeout(() => document.querySelector('.prompt-close').focus(), 0);
+  }
+
+  function closePromptLibrary(event) {
+    if (event && event.target !== promptModal) return;
+    promptModal.classList.remove('open');
+    document.body.style.overflow = '';
+    showPromptIndex();
+  }
+
+  function showPromptIndex() {
+    promptDetailChanging = true;
+    document.querySelectorAll('.prompt-card').forEach(card => {
+      card.open = false;
+      card.classList.remove('selected');
+    });
+    promptLibrary.classList.remove('detail-mode');
+    promptList.classList.remove('detail-mode');
+    promptBack.hidden = true;
+    promptList.scrollTop = 0;
+    setTimeout(() => { promptDetailChanging = false; }, 0);
+  }
+
+  function filterPrompts(category, button) {
+    showPromptIndex();
+    document.querySelectorAll('.prompt-filter').forEach(item => item.classList.toggle('active', item === button));
+    document.querySelectorAll('.prompt-card').forEach(card => {
+      const categories = card.dataset.category.split(' ');
+      card.hidden = category !== 'all' && !categories.includes(category);
+    });
+  }
+
+  async function copyPrompt(button) {
+    const textarea = button.closest('.prompt-card-body').querySelector('textarea');
+    try {
+      await navigator.clipboard.writeText(textarea.value);
+    } catch (error) {
+      textarea.focus();
+      textarea.select();
+      document.execCommand('copy');
+    }
+    const originalText = button.textContent;
+    button.textContent = '已複製，可以貼到 AI 工具';
+    setTimeout(() => { button.textContent = originalText; }, 1800);
+  }
 
   // Keyboard
   document.addEventListener('keydown', e => {
-    if (['ArrowRight','ArrowDown',' '].includes(e.key)) { e.preventDefault(); goTo(current + 1); }
-    if (['ArrowLeft','ArrowUp'].includes(e.key)) { e.preventDefault(); goTo(current - 1); }
-  });
-
-  // Click to advance (but not on links/buttons)
-  document.getElementById('slidesWrapper').addEventListener('click', e => {
-    if (e.target.closest('a, button, .btn-primary, .btn-outline, .tool-card, #prevBtn, #nextBtn')) return;
-    goTo(current + 1);
-  });
-
-  // Touch swipe
-  let touchStartX = 0;
-  document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; });
-  document.addEventListener('touchend', e => {
-    const dx = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(dx) > 50) goTo(dx < 0 ? current + 1 : current - 1);
+    if (promptModal.classList.contains('open')) {
+      if (e.key === 'Escape') closePromptLibrary();
+      return;
+    }
+    if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
   });
 </script>
 
