@@ -1212,7 +1212,7 @@
       <div class="prompt-box">我是國小【年級／領域】教師。請依照【資料或課程主題】，為【學習者】設計【成果】，包含【指定欄位】，並遵守【限制】。完成後請用【檢核標準】自我檢查。</div>
       <div class="resource-actions">
         <button type="button" class="btn-primary" onclick="openPromptLibrary()">開啟提示詞操作中心</button>
-        <a href="https://docs.google.com/document/d/15XWItKCS6yQj-_xm4-BbChhSjKjWw_vIpLMpErcrZR0/edit?tab=t.0" target="_blank" rel="noopener" class="btn-outline">查看完整操作筆記</a>
+        <a href="https://www.bnext.com.tw/article/84076/ai-prompt-gemini-for-workspace" target="_blank" rel="noopener" class="btn-outline">AI 提示萬用公式</a>
       </div>
     </div>
   </div>
@@ -1383,23 +1383,26 @@
       <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:start;">
         <div>
           <ul class="step-list">
-            <li><div class="step-num">1</div><p style="font-size:17px;padding-top:3px;">開啟 Gemini，試試 <strong style="color:var(--cyan-light);">AI 問答</strong></p></li>
-            <li><div class="step-num">2</div><p style="font-size:17px;padding-top:3px;">請AI幫你生成一份<strong style="color:var(--cyan-light);">教案</strong></p></li>
-            <li><div class="step-num">3</div><p style="font-size:17px;padding-top:3px;">設計一個<strong style="color:var(--cyan-light);">教學活動</strong></p></li>
-            <li><div class="step-num">4</div><p style="font-size:17px;padding-top:3px;">請AI出幾道<strong style="color:var(--cyan-light);">測驗題目</strong></p></li>
-            <li><div class="step-num">5</div><p style="font-size:17px;padding-top:3px;">試試 <strong style="color:var(--cyan-light);">Deep Research</strong> 深度研究</p></li>
+            <li><div class="step-num">1</div><p style="font-size:17px;padding-top:3px;"><strong style="color:var(--cyan-light);">寫個教案</strong>：用 Gemini 寫一份教案</p></li>
+            <li><div class="step-num">2</div><p style="font-size:17px;padding-top:3px;"><strong style="color:var(--cyan-light);">Gemini Canvas</strong>：做一份教材</p></li>
+            <li><div class="step-num">3</div><p style="font-size:17px;padding-top:3px;"><strong style="color:var(--cyan-light);">Storybook</strong>：來做一本繪本</p></li>
+            <li><div class="step-num">4</div><p style="font-size:17px;padding-top:3px;"><strong style="color:var(--cyan-light);">做一個 Gem</strong>：把重複的事情交給 Gem</p></li>
+            <li><div class="step-num">5</div><p style="font-size:17px;padding-top:3px;"><strong style="color:var(--cyan-light);">課本文字圖像化</strong>：將課本文字變成圖像</p></li>
           </ul>
         </div>
         <div>
           <div class="glass-card" style="margin-bottom:16px;">
-            <p style="color:var(--cyan-light);font-size:13px;font-weight:700;margin-bottom:8px;">💡 Prompt 小提示</p>
-            <p style="font-size:14px;color:var(--white-70);line-height:1.7;">「我是國小○年級○科老師，請幫我設計一個關於【主題】的教案，包含學習目標、教學活動和評量方式。」</p>
+            <p style="color:var(--cyan-light);font-size:13px;font-weight:700;margin-bottom:8px;">💡 操作小提示</p>
+            <p style="font-size:14px;color:var(--white-70);line-height:1.7;">先選一項想完成的任務，再補上年級、學科、主題與成果形式；完成後記得依課程目標檢核與調整。</p>
           </div>
           <a href="https://gemini.google.com/app" target="_blank" class="btn-primary" style="width:100%;justify-content:center;">
             🔷 開啟 Gemini
           </a>
-          <button type="button" class="btn-outline" onclick="openPromptLibrary('teacher')" style="width:100%;justify-content:center;margin-top:10px;background:rgba(0,194,224,.08);">複製本活動提示詞</button>
         </div>
+      </div>
+      <div class="resource-actions" style="margin-top:18px;">
+        <button type="button" class="btn-primary" onclick="openPromptLibrary()">開啟提示詞操作中心</button>
+        <a href="https://docs.google.com/document/d/15XWItKCS6yQj-_xm4-BbChhSjKjWw_vIpLMpErcrZR0/edit?tab=t.0" target="_blank" rel="noopener" class="btn-outline">查看完整操作筆記</a>
       </div>
     </div>
   </div>
@@ -1411,20 +1414,20 @@
       <h2 style="font-size:38px;font-weight:900;margin-bottom:6px;">📒 Gemini Notebook 體驗</h2>
       <p style="color:var(--white-70);margin-top:8px;">原 NotebookLM 已更名為 Gemini Notebook；仍是獨立的研究與學習工具。</p>
       <div class="deco-line" style="margin-bottom:18px;"></div>
-      <div style="display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:start;">
-        <div>
-          <ul class="step-list">
+      <div style="display:grid;grid-template-columns:1.08fr .92fr;gap:24px;align-items:stretch;">
+        <div style="display:flex;flex-direction:column;">
+          <ul class="step-list" style="margin-top:clamp(110px, 18vh, 170px);">
             <li><div class="step-num">1</div><p style="font-size:16px;padding-top:3px;">建立筆記本，加入<strong style="color:var(--cyan-light);">教學資料與可信來源</strong></p></li>
             <li><div class="step-num">2</div><p style="font-size:16px;padding-top:3px;">針對來源提問，查看<strong style="color:var(--cyan-light);">行內引用</strong></p></li>
             <li><div class="step-num">3</div><p style="font-size:16px;padding-top:3px;">生成摘要、學習指南、心智圖與測驗</p></li>
             <li><div class="step-num">4</div><p style="font-size:16px;padding-top:3px;">試做 <strong style="color:var(--cyan-light);">Audio／Video Overview</strong></p></li>
           </ul>
-          <div class="glass-card" style="margin-top:16px;padding:16px 18px;"><p style="font-size:14px;color:var(--white-70);line-height:1.7;"><strong style="color:var(--cyan-light);">重點：</strong>需要有資料依據的任務，就讓 AI 先讀你指定的資料，再回答與生成。</p></div>
+          <div class="glass-card" style="margin-top:auto;padding:16px 18px;"><p style="font-size:14px;color:var(--white-70);line-height:1.7;"><strong style="color:var(--cyan-light);">重點：</strong>需要有資料依據的任務，就讓 AI 先讀你指定的資料，再回答與生成。</p></div>
         </div>
         <div>
           <img src="gemini-notebook-renamed.png" alt="NotebookLM 更名為 Gemini Notebook" style="width:100%;border-radius:14px;background:white;box-shadow:0 16px 44px rgba(0,0,0,.3);">
           <a href="https://notebooklm.google.com/" target="_blank" rel="noopener" class="btn-primary" style="width:100%;justify-content:center;margin-top:16px;">開始使用 Gemini Notebook</a>
-          <button type="button" class="btn-outline" onclick="openPromptLibrary('teacher')" style="width:100%;justify-content:center;margin-top:10px;background:rgba(0,194,224,.08);">複製命題與分析提示詞</button>
+          <a href="https://docs.google.com/document/d/1gn_DbQXZnf4G8QwtriO3EFBhS_bIfcezI1SVouhlS6I/edit?usp=sharing" target="_blank" rel="noopener" class="btn-outline" style="width:100%;justify-content:center;margin-top:10px;background:rgba(0,194,224,.08);">查看 Gemini Notebook 操作筆記</a>
           <p class="source-note" style="margin-top:9px;">名稱更新依據：<a href="https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/" target="_blank" rel="noopener" style="color:var(--cyan-light);">Google 官方於 2026 年 7 月 16 日公告</a>。</p>
         </div>
       </div>
@@ -1842,6 +1845,12 @@ style:
 <button class="nav-btn right" id="nextBtn" type="button" aria-label="下一頁" onclick="goTo(current+1)">›</button>
 
 <script>
+  // 將 AIPACK 圖解放在概念介紹之前，與研習講述順序一致。
+  const initialSlides = document.querySelectorAll('.slide');
+  initialSlides[15].before(initialSlides[16]);
+  // 先看教育資源與學生端應用，再進入教師端實作。
+  const reorderedSlides = document.querySelectorAll('.slide');
+  reorderedSlides[17].before(reorderedSlides[20], reorderedSlides[21]);
   const slides = document.querySelectorAll('.slide');
   const slideSelect = document.getElementById('slideSelect');
   let current = 0;
